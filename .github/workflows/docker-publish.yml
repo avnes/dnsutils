@@ -37,7 +37,7 @@ jobs:
             docker build . --file Dockerfile --tag ${{ steps.get-image-name.outputs.image_name }}
           fi
 
-      - name: Run the Anchore scan action itself with GitHub Advanced Security code scanning integration enabled
+      - name: Run the Anchore scan
         uses: anchore/scan-action@v7.4.2
         id: scan
         with:
