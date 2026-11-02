@@ -1,5 +1,5 @@
-FROM scratch
+FROM alpine:3.24
 
-COPY src/entrypoint.sh .
+RUN apk add --no-cache bind-tools nmap netcat-openbsd curl openssl yq jq hey
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "sh" ]
